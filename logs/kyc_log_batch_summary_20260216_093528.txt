@@ -1,0 +1,133 @@
+KYC BATCH PROCESSING LOG
+Process Date: 2026-02-16 09:35:27
+============================================================
+
+
+❌ ERROR PROCESSING NIC 952620274V:
+   Error: No image found for 952620274V_front in C:\Users\Ishani(IshaniUdeshik\OneDrive - Tech One Global Singapore Pte. Ltd\Desktop\KYC\IDs\1 (expected one of ['.jpg', '.jpeg', '.png'])
+Traceback (most recent call last):
+  File "C:\Users\Ishani(IshaniUdeshik\OneDrive - Tech One Global Singapore Pte. Ltd\Desktop\KYC\demo1_app_11.py", line 368, in run_kyc_pipeline
+    id_front_path = find_image(ID_FOLDER, f"{nic}_front")
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ishani(IshaniUdeshik\OneDrive - Tech One Global Singapore Pte. Ltd\Desktop\KYC\demo1_app_11.py", line 102, in find_image
+    raise FileNotFoundError(
+FileNotFoundError: No image found for 952620274V_front in C:\Users\Ishani(IshaniUdeshik\OneDrive - Tech One Global Singapore Pte. Ltd\Desktop\KYC\IDs\1 (expected one of ['.jpg', '.jpeg', '.png'])
+
+
+❌ ERROR PROCESSING NIC 965862960V:
+   Error: No image found for 965862960V_front in C:\Users\Ishani(IshaniUdeshik\OneDrive - Tech One Global Singapore Pte. Ltd\Desktop\KYC\IDs\1 (expected one of ['.jpg', '.jpeg', '.png'])
+Traceback (most recent call last):
+  File "C:\Users\Ishani(IshaniUdeshik\OneDrive - Tech One Global Singapore Pte. Ltd\Desktop\KYC\demo1_app_11.py", line 368, in run_kyc_pipeline
+    id_front_path = find_image(ID_FOLDER, f"{nic}_front")
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ishani(IshaniUdeshik\OneDrive - Tech One Global Singapore Pte. Ltd\Desktop\KYC\demo1_app_11.py", line 102, in find_image
+    raise FileNotFoundError(
+FileNotFoundError: No image found for 965862960V_front in C:\Users\Ishani(IshaniUdeshik\OneDrive - Tech One Global Singapore Pte. Ltd\Desktop\KYC\IDs\1 (expected one of ['.jpg', '.jpeg', '.png'])
+
+
+❌ ERROR PROCESSING NIC 200434002531:
+   Error: No image found for 200434002531_front in C:\Users\Ishani(IshaniUdeshik\OneDrive - Tech One Global Singapore Pte. Ltd\Desktop\KYC\IDs\1 (expected one of ['.jpg', '.jpeg', '.png'])
+Traceback (most recent call last):
+  File "C:\Users\Ishani(IshaniUdeshik\OneDrive - Tech One Global Singapore Pte. Ltd\Desktop\KYC\demo1_app_11.py", line 472, in run_kyc_pipeline
+    id_front_path = find_image(ID_FOLDER, f"{nic}_front")
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ishani(IshaniUdeshik\OneDrive - Tech One Global Singapore Pte. Ltd\Desktop\KYC\demo1_app_11.py", line 102, in find_image
+    raise FileNotFoundError(
+FileNotFoundError: No image found for 200434002531_front in C:\Users\Ishani(IshaniUdeshik\OneDrive - Tech One Global Singapore Pte. Ltd\Desktop\KYC\IDs\1 (expected one of ['.jpg', '.jpeg', '.png'])
+
+
+❌ ERROR PROCESSING NIC 976200543V:
+   Error: No image found for 976200543V_front in C:\Users\Ishani(IshaniUdeshik\OneDrive - Tech One Global Singapore Pte. Ltd\Desktop\KYC\IDs\1 (expected one of ['.jpg', '.jpeg', '.png'])
+Traceback (most recent call last):
+  File "C:\Users\Ishani(IshaniUdeshik\OneDrive - Tech One Global Singapore Pte. Ltd\Desktop\KYC\demo1_app_11.py", line 368, in run_kyc_pipeline
+    id_front_path = find_image(ID_FOLDER, f"{nic}_front")
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ishani(IshaniUdeshik\OneDrive - Tech One Global Singapore Pte. Ltd\Desktop\KYC\demo1_app_11.py", line 102, in find_image
+    raise FileNotFoundError(
+FileNotFoundError: No image found for 976200543V_front in C:\Users\Ishani(IshaniUdeshik\OneDrive - Tech One Global Singapore Pte. Ltd\Desktop\KYC\IDs\1 (expected one of ['.jpg', '.jpeg', '.png'])
+
+
+❌ ERROR PROCESSING NIC 200415102593:
+   Error: No image found for 200415102593_front in C:\Users\Ishani(IshaniUdeshik\OneDrive - Tech One Global Singapore Pte. Ltd\Desktop\KYC\IDs\1 (expected one of ['.jpg', '.jpeg', '.png'])
+Traceback (most recent call last):
+  File "C:\Users\Ishani(IshaniUdeshik\OneDrive - Tech One Global Singapore Pte. Ltd\Desktop\KYC\demo1_app_11.py", line 472, in run_kyc_pipeline
+    id_front_path = find_image(ID_FOLDER, f"{nic}_front")
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ishani(IshaniUdeshik\OneDrive - Tech One Global Singapore Pte. Ltd\Desktop\KYC\demo1_app_11.py", line 102, in find_image
+    raise FileNotFoundError(
+FileNotFoundError: No image found for 200415102593_front in C:\Users\Ishani(IshaniUdeshik\OneDrive - Tech One Global Singapore Pte. Ltd\Desktop\KYC\IDs\1 (expected one of ['.jpg', '.jpeg', '.png'])
+
+
+❌ ERROR PROCESSING NIC 200407813421:
+   Error: No image found for 200407813421_front in C:\Users\Ishani(IshaniUdeshik\OneDrive - Tech One Global Singapore Pte. Ltd\Desktop\KYC\IDs\1 (expected one of ['.jpg', '.jpeg', '.png'])
+Traceback (most recent call last):
+  File "C:\Users\Ishani(IshaniUdeshik\OneDrive - Tech One Global Singapore Pte. Ltd\Desktop\KYC\demo1_app_11.py", line 472, in run_kyc_pipeline
+    id_front_path = find_image(ID_FOLDER, f"{nic}_front")
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ishani(IshaniUdeshik\OneDrive - Tech One Global Singapore Pte. Ltd\Desktop\KYC\demo1_app_11.py", line 102, in find_image
+    raise FileNotFoundError(
+FileNotFoundError: No image found for 200407813421_front in C:\Users\Ishani(IshaniUdeshik\OneDrive - Tech One Global Singapore Pte. Ltd\Desktop\KYC\IDs\1 (expected one of ['.jpg', '.jpeg', '.png'])
+
+
+❌ ERROR PROCESSING NIC 200035500058:
+   Error: No image found for 200035500058_front in C:\Users\Ishani(IshaniUdeshik\OneDrive - Tech One Global Singapore Pte. Ltd\Desktop\KYC\IDs\1 (expected one of ['.jpg', '.jpeg', '.png'])
+Traceback (most recent call last):
+  File "C:\Users\Ishani(IshaniUdeshik\OneDrive - Tech One Global Singapore Pte. Ltd\Desktop\KYC\demo1_app_11.py", line 368, in run_kyc_pipeline
+    id_front_path = find_image(ID_FOLDER, f"{nic}_front")
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ishani(IshaniUdeshik\OneDrive - Tech One Global Singapore Pte. Ltd\Desktop\KYC\demo1_app_11.py", line 102, in find_image
+    raise FileNotFoundError(
+FileNotFoundError: No image found for 200035500058_front in C:\Users\Ishani(IshaniUdeshik\OneDrive - Tech One Global Singapore Pte. Ltd\Desktop\KYC\IDs\1 (expected one of ['.jpg', '.jpeg', '.png'])
+
+
+❌ ERROR PROCESSING NIC 200001602030:
+   Error: No image found for 200001602030_front in C:\Users\Ishani(IshaniUdeshik\OneDrive - Tech One Global Singapore Pte. Ltd\Desktop\KYC\IDs\1 (expected one of ['.jpg', '.jpeg', '.png'])
+Traceback (most recent call last):
+  File "C:\Users\Ishani(IshaniUdeshik\OneDrive - Tech One Global Singapore Pte. Ltd\Desktop\KYC\demo1_app_11.py", line 368, in run_kyc_pipeline
+    id_front_path = find_image(ID_FOLDER, f"{nic}_front")
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ishani(IshaniUdeshik\OneDrive - Tech One Global Singapore Pte. Ltd\Desktop\KYC\demo1_app_11.py", line 102, in find_image
+    raise FileNotFoundError(
+FileNotFoundError: No image found for 200001602030_front in C:\Users\Ishani(IshaniUdeshik\OneDrive - Tech One Global Singapore Pte. Ltd\Desktop\KYC\IDs\1 (expected one of ['.jpg', '.jpeg', '.png'])
+
+
+❌ ERROR PROCESSING NIC 962651380V:
+   Error: No image found for 962651380V_front in C:\Users\Ishani(IshaniUdeshik\OneDrive - Tech One Global Singapore Pte. Ltd\Desktop\KYC\IDs\1 (expected one of ['.jpg', '.jpeg', '.png'])
+Traceback (most recent call last):
+  File "C:\Users\Ishani(IshaniUdeshik\OneDrive - Tech One Global Singapore Pte. Ltd\Desktop\KYC\demo1_app_11.py", line 368, in run_kyc_pipeline
+    id_front_path = find_image(ID_FOLDER, f"{nic}_front")
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ishani(IshaniUdeshik\OneDrive - Tech One Global Singapore Pte. Ltd\Desktop\KYC\demo1_app_11.py", line 102, in find_image
+    raise FileNotFoundError(
+FileNotFoundError: No image found for 962651380V_front in C:\Users\Ishani(IshaniUdeshik\OneDrive - Tech One Global Singapore Pte. Ltd\Desktop\KYC\IDs\1 (expected one of ['.jpg', '.jpeg', '.png'])
+
+
+❌ ERROR PROCESSING NIC 963460937V:
+   Error: No image found for 963460937V_front in C:\Users\Ishani(IshaniUdeshik\OneDrive - Tech One Global Singapore Pte. Ltd\Desktop\KYC\IDs\1 (expected one of ['.jpg', '.jpeg', '.png'])
+Traceback (most recent call last):
+  File "C:\Users\Ishani(IshaniUdeshik\OneDrive - Tech One Global Singapore Pte. Ltd\Desktop\KYC\demo1_app_11.py", line 368, in run_kyc_pipeline
+    id_front_path = find_image(ID_FOLDER, f"{nic}_front")
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ishani(IshaniUdeshik\OneDrive - Tech One Global Singapore Pte. Ltd\Desktop\KYC\demo1_app_11.py", line 102, in find_image
+    raise FileNotFoundError(
+FileNotFoundError: No image found for 963460937V_front in C:\Users\Ishani(IshaniUdeshik\OneDrive - Tech One Global Singapore Pte. Ltd\Desktop\KYC\IDs\1 (expected one of ['.jpg', '.jpeg', '.png'])
+
+
+============================================================
+📊 PROCESSING SUMMARY
+============================================================
+Total Records:          10
+Successfully Processed: 0
+Failed:                 10
+Success Rate:           0.0%
+Total Processing Time:  0.36 seconds
+Average Time per Record: 0.04 seconds
+Fastest Record:         0.00 seconds
+Slowest Record:         0.02 seconds
+============================================================
+
+📈 FINAL RESULTS:
+Excel Results Saved to: C:\Users\Ishani(IshaniUdeshik\OneDrive - Tech One Global Singapore Pte. Ltd\Desktop\KYC\kyc_results.xlsx
+Logs Saved to: C:\Users\Ishani(IshaniUdeshik\OneDrive - Tech One Global Singapore Pte. Ltd\Desktop\KYC\logs
+Process Completed at: 2026-02-16 09:35:28
+============================================================
