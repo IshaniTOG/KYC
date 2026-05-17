@@ -1,0 +1,45 @@
+KYC BATCH PROCESSING LOG
+Process Date: 2026-02-16 10:02:54
+============================================================
+
+
+❌ ERROR PROCESSING NIC 952620274V:
+   Error: No image found for 952620274V_front in C:\Users\Ishani(IshaniUdeshik\OneDrive - Tech One Global Singapore Pte. Ltd\Desktop\KYC\IDs\1 (expected one of ['.jpg', '.jpeg', '.png'])
+Traceback (most recent call last):
+  File "C:\Users\Ishani(IshaniUdeshik\OneDrive - Tech One Global Singapore Pte. Ltd\Desktop\KYC\demo1_app_11.py", line 368, in run_kyc_pipeline
+    id_front_path = find_image(ID_FOLDER, f"{nic}_front")
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ishani(IshaniUdeshik\OneDrive - Tech One Global Singapore Pte. Ltd\Desktop\KYC\demo1_app_11.py", line 102, in find_image
+    raise FileNotFoundError(
+FileNotFoundError: No image found for 952620274V_front in C:\Users\Ishani(IshaniUdeshik\OneDrive - Tech One Global Singapore Pte. Ltd\Desktop\KYC\IDs\1 (expected one of ['.jpg', '.jpeg', '.png'])
+
+
+❌ ERROR PROCESSING NIC 965862960V:
+   Error: No image found for 965862960V_front in C:\Users\Ishani(IshaniUdeshik\OneDrive - Tech One Global Singapore Pte. Ltd\Desktop\KYC\IDs\1 (expected one of ['.jpg', '.jpeg', '.png'])
+Traceback (most recent call last):
+  File "C:\Users\Ishani(IshaniUdeshik\OneDrive - Tech One Global Singapore Pte. Ltd\Desktop\KYC\demo1_app_11.py", line 368, in run_kyc_pipeline
+    id_front_path = find_image(ID_FOLDER, f"{nic}_front")
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ishani(IshaniUdeshik\OneDrive - Tech One Global Singapore Pte. Ltd\Desktop\KYC\demo1_app_11.py", line 102, in find_image
+    raise FileNotFoundError(
+FileNotFoundError: No image found for 965862960V_front in C:\Users\Ishani(IshaniUdeshik\OneDrive - Tech One Global Singapore Pte. Ltd\Desktop\KYC\IDs\1 (expected one of ['.jpg', '.jpeg', '.png'])
+
+
+============================================================
+📊 PROCESSING SUMMARY
+============================================================
+Total Records:          2
+Successfully Processed: 0
+Failed:                 2
+Success Rate:           0.0%
+Total Processing Time:  0.18 seconds
+Average Time per Record: 0.09 seconds
+Fastest Record:         0.00 seconds
+Slowest Record:         0.00 seconds
+============================================================
+
+📈 FINAL RESULTS:
+Excel Results Saved to: C:\Users\Ishani(IshaniUdeshik\OneDrive - Tech One Global Singapore Pte. Ltd\Desktop\KYC\kyc_results.xlsx
+Logs Saved to: C:\Users\Ishani(IshaniUdeshik\OneDrive - Tech One Global Singapore Pte. Ltd\Desktop\KYC\logs
+Process Completed at: 2026-02-16 10:02:55
+============================================================
