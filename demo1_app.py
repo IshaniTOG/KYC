@@ -272,10 +272,14 @@ def verify_faces(id_image: str, selfie_image: str) -> dict:
         model_name="ArcFace",
         detector_backend="retinaface",
     )
+    threshold  = result["threshold"]          # e.g. 0.68 from ArcFace
+    distance   = result["distance"]
+    confidence = face_confidence(distance)
     return {
-        "verified":  result["verified"],
-        "distance":  result["distance"],
-        "threshold": result["threshold"],
+        "verified":   result["verified"],
+        "distance":   distance,
+        "threshold":  threshold,
+        "confidence": confidence,             # 0–100%, relative to threshold
     }
 
 def gpt_name_comparison(input_name: str, id_name: str) -> dict:
@@ -343,6 +347,27 @@ def nic_confidence(input_nic: str, id_card_nic: str) -> float:
         return 100.0
     return round(SequenceMatcher(None, clean_input, clean_id).ratio() * 100, 2)
 
+def face_confidence(distance: float) -> float:
+    """Convert ArcFace cosine distance to a 0–100% confidence score.
+    confidence = (1 - distance) × 100
+    e.g. distance=0.00 → 100%, distance=0.68 → 32%, distance=1.0 → 0%"""
+    return round(max(0.0, (1 - distance) * 100), 1)
+
+# Pass threshold = (1 - ArcFace threshold) × 100 = (1 - 0.68) × 100 = 32%
+# Any confidence above 32% means distance was below 0.68 (DeepFace verified = True)
+FACE_CONFIDENCE_PASS = 32.0
+
+def confidence_remark(avg: float) -> str:
+    """Return a human-readable remark based on average confidence across all three checks."""
+    if avg >= 80:
+        return "HIGH CONFIDENCE — Strong identity match"
+    elif avg >= 60:
+        return "MODERATE CONFIDENCE — Acceptable identity match"
+    elif avg >= 40:
+        return "LOW CONFIDENCE — Manual review recommended"
+    else:
+        return "VERY LOW CONFIDENCE — Identity could not be verified"
+
 def save_log_to_file(log_content: str, nic: str = "batch") -> str:
     os.makedirs(LOG_FOLDER, exist_ok=True)
     timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
@@ -376,15 +401,24 @@ def generate_kyc_log(input_name, extracted_name, gpt_result, gpt_name_conf,
         f"Confidence          : {id_conf}%",
         f"Status              : {'✅ PASS' if id_conf >= 95 else '❌ FAIL'}", "",
         "===== FACE VERIFICATION =====",
-        f"Verified            : {'✅ YES' if face_result['verified'] else '❌ NO'}",
+        f"Confidence          : {face_result['confidence']}%",
         f"Distance            : {round(face_result['distance'], 4)}",
         f"Threshold           : {face_result['threshold']}",
+        f"Status              : {'✅ PASS' if face_result['confidence'] >= FACE_CONFIDENCE_PASS else '❌ FAIL'}",
     ]
     if processing_time is not None:
         lines.append(f"Processing Time     : {processing_time:.2f} seconds")
-    overall_pass = (gpt_name_conf >= 80) and (id_conf >= 95) and face_result["verified"]
+    avg_confidence = round((gpt_name_conf + id_conf + face_result["confidence"]) / 3, 1)
+    overall_pass   = (gpt_name_conf >= 80) and (id_conf >= 95) and (face_result["confidence"] >= FACE_CONFIDENCE_PASS)
     lines += [
         "", "=" * 60,
+        "===== FINAL REMARKS =====",
+        f"Name Confidence     : {gpt_name_conf}%",
+        f"NIC Confidence      : {id_conf}%",
+        f"Face Confidence     : {face_result['confidence']}%",
+        f"Overall Confidence  : {avg_confidence}%",
+        f"Remark              : {confidence_remark(avg_confidence)}",
+        "",
         "✅ OVERALL KYC VERIFICATION: PASSED" if overall_pass else "❌ OVERALL KYC VERIFICATION: FAILED",
         "=" * 60,
     ]
@@ -524,7 +558,7 @@ def run_kyc_pipeline():
             batch_log.append(individual_log)
             save_log_to_file("\n".join(header) + "\n" + individual_log, nic)
 
-            biometric_pass = nic_match and face_result["verified"]
+            biometric_pass = nic_match and (face_result["confidence"] >= FACE_CONFIDENCE_PASS)
             name_pass      = name_compare["same_entity"] and name_compare["confidence_score"] >= 0.7
 
             if is_type1_nic(nic):
@@ -555,13 +589,15 @@ def run_kyc_pipeline():
                 "NIC No(Extracted)":   r["front_data"].id_no,
                 "NIC Confidence":      nic_conf,
                 "NIC Match":           nic_match,
-                "Face Verified":       face_result["verified"],
-                "Face Confidence":     face_result["distance"],
-                "Name Match":          name_compare["same_entity"],
-                "Name Confidence":     name_compare["confidence_score"] * 100,
-                "Sex":                 r["extracted_sex"],
-                "Processing Time (s)": round(record_time, 2),
-                "Final Status":        record_status,
+                "Face Verified":          face_result["confidence"] >= FACE_CONFIDENCE_PASS,
+                "Face Confidence (%)":    face_result["confidence"],
+                "Name Match":             name_compare["same_entity"],
+                "Name Confidence (%)":    name_compare["confidence_score"] * 100,
+                "Overall Confidence (%)": round((nic_conf + face_result["confidence"] + name_compare["confidence_score"] * 100) / 3, 1),
+                "Remark":                 confidence_remark(round((nic_conf + face_result["confidence"] + name_compare["confidence_score"] * 100) / 3, 1)),
+                "Sex":                    r["extracted_sex"],
+                "Processing Time (s)":    round(record_time, 2),
+                "Final Status":           record_status,
             })
 
             print(f"   {status_icon} Record completed in {record_time:.2f} seconds")
